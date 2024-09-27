@@ -1,0 +1,19 @@
+{
+    "name": "point-validator",
+    "version": "1.0.0-beta",
+    "author": "Hassan Raza",
+    "description": "Javascript library for data validation",
+    "license": "MIT",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "keywords": [
+        "point-validator"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hr1938082/PointValidator.git"
+    },
+    "bugs": {
+        "url": "https://github.com/hr1938082/PointValidator/issues"
+    }
+}
