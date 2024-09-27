@@ -31,7 +31,7 @@ export type Error<T> = {
 
 export interface Options<T extends Record<string, any>> {
     values: T;
-    rules: ValueRules<T>;
+    rules?: ValueRules<T>;
     message?: Message<ValueRules<T>>;
 }
 
