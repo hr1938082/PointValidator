@@ -107,14 +107,3 @@ const Validator = <T extends Record<string, any>>(options: Options<T>) => {
 };
 
 export default Validator
-
-
-Validator({
-    values: {
-        email: 'test@email.com',
-        password: 'password123',
-    },
-    rules: {
-        email: ['accepted', '']
-    }
-})
