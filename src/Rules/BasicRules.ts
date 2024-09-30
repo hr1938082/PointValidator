@@ -10,7 +10,15 @@ const BasicRules = [
     'declined',
     'required',
     'date',
-    'email'
+    'email',
+    'upper_case',
+    'contains_upper_case',
+    'small_case',
+    'contains_small_case',
+    'numeric',
+    'contains_numeric',
+    'symbols',
+    'contains_symbols',
 ] as const;
 
 export default BasicRules

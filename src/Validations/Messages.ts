@@ -14,7 +14,10 @@ const Messages = (key: string, ruleKey: Keys, ruleKeyParams?: string[]): string 
         between: `${key} must be between ${ruleKeyParams && `${ruleKeyParams[0]} ${ruleKeyParams[1]}`}`,
         boolean: `${key} is not boolean`,
         contains: `${key} must be contains ${ruleKeyParams && ruleKeyParams.join(',')}`,
-
+        contains_numeric: `${key} must contains number`,
+        contains_small_case: `${key} must contains small case`,
+        contains_symbols: `${key} must contains symbols`,
+        contains_upper_case: `${key} must contains upper case`,
         date: `${key} is not date`,
         date_equals_to: `${key} is not eqauls to ${ruleKeyParams && ruleKeyParams[0]}`,
         date_greater_than: `${key} is not greater than ${ruleKeyParams && ruleKeyParams[0]}`,
@@ -27,6 +30,7 @@ const Messages = (key: string, ruleKey: Keys, ruleKeyParams?: string[]): string 
         email: `Invalid ${key}`,
         max: `${key} should be less then or equal to ${ruleKeyParams && ruleKeyParams[0]}`,
         min: `${key} should be greater then or equal to ${ruleKeyParams && ruleKeyParams[0]}`,
+        numeric: `${key} must be number`,
         regex: `${key} not match with pattren`,
         required: `${key} is required`,
         required_if: `${key} is required`,
@@ -37,6 +41,9 @@ const Messages = (key: string, ruleKey: Keys, ruleKeyParams?: string[]): string 
         required_if_not_any: `${key} is required`,
         required_unless: `${key} is required`,
         same: `${key} not matched with ${ruleKeyParams && ruleKeyParams[0]}`,
+        small_case: `${key} must be small case`,
+        symbols: `${key} must be symbols`,
+        upper_case: `${key} must be upper case`,
     }
 
     return messages[ruleKey]
