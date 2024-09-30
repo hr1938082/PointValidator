@@ -1,11 +1,10 @@
 import { BaseValidateRule } from "../ValidateRule"
+import ValidateRegex from "./ValidateRegex";
 
 const Regex: BaseValidateRule = ({ values, key, ruleKeyParams }) => {
-    const value = values[key];
     if (ruleKeyParams && ruleKeyParams.length === 1) {
-        const regex = new RegExp(ruleKeyParams[0]);
-
-        if (regex.test(value)) {
+        const value = values[key];
+        if (ValidateRegex(ruleKeyParams[0], value)) {
             return true
         }
         return false;

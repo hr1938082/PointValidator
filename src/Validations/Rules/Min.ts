@@ -1,8 +1,8 @@
 import { BaseValidateRule } from "../ValidateRule"
 
 const Min: BaseValidateRule = ({ values, key, ruleKeyParams }) => {
-    const value = values[key];
     if (ruleKeyParams && ruleKeyParams.length === 1 && !isNaN(Number(ruleKeyParams[0]))) {
+        const value = values[key];
         const min = Number(ruleKeyParams[0])
         if (!isNaN(Number(value))) {
             if (Number(value) >= min) {

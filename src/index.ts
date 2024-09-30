@@ -2,20 +2,27 @@ import Rules from "./Rules";
 import Validations from "./Validations";
 
 export type BasicRules = typeof Rules.basic[number];
-export type NumberRules = typeof Rules.number[number];
-export type StringRules = typeof Rules.string[number];
+export type ValuesRules = typeof Rules.value[number];
 export type KeyRules = typeof Rules.key[number];
+export type KeyValueRules = typeof Rules.key_value[number];
 export type NotValidationRule = typeof Rules.not[number];
 
-export type Keys = BasicRules | NumberRules | StringRules | KeyRules;
+export type Keys = BasicRules | ValuesRules | KeyRules | KeyValueRules;
 
-export type NumberRulesWithParam = `${typeof Rules.number[number]}:${number}` | `${typeof Rules.number[number]}:number`;
-export type StringRuleWithParams = `${typeof Rules.string[number]}:${string}` | `${typeof Rules.string[number]}:string`
-export type KeyRulesWithParam<T> = `${typeof Rules.key[number]}:${Extract<keyof T, string>}`;
+type CommaSeparatedKeyValue<T> = `${Extract<keyof T, string>},value`;
 
-export type KeysWithParam<T> = BasicRules | NumberRulesWithParam | StringRuleWithParams | KeyRulesWithParam<T> | NotValidationRule;
+export type ValueRulesWithParams = `${ValuesRules}:value`;
+export type KeyRulesWithParam<T> = `${KeyRules}:${Extract<keyof T, string>}`;
+export type KeyValueRuleWithParams<T> = `${KeyValueRules}:${CommaSeparatedKeyValue<T>}`
 
-export type ValueRules<T> = {
+export type KeysWithParam<T> = BasicRules
+    | ValueRulesWithParams
+    | KeyRulesWithParam<T>
+    | KeyValueRuleWithParams<T>
+    | NotValidationRule
+    | (`${string}` & {});
+
+export type Rules<T> = {
     [k in keyof T]?: KeysWithParam<T>[]
 }
 
@@ -31,8 +38,8 @@ export type Error<T> = {
 
 export interface Options<T extends Record<string, any>> {
     values: T;
-    rules?: ValueRules<T>;
-    message?: Message<ValueRules<T>>;
+    rules?: Rules<T>;
+    message?: Message<Rules<T>>;
 }
 
 const Validator = <T extends Record<string, any>>(options: Options<T>) => {
@@ -100,3 +107,14 @@ const Validator = <T extends Record<string, any>>(options: Options<T>) => {
 };
 
 export default Validator
+
+
+Validator({
+    values: {
+        email: 'test@email.com',
+        password: 'password123',
+    },
+    rules: {
+        email: ['accepted', '']
+    }
+})

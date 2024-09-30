@@ -1,14 +1,14 @@
 import BasicRules from "./BasicRules";
 import KeyRules from "./KeyRules";
+import KeyValueRules from "./KeyValueRules";
 import NotValidationRule from "./NotValidationRule";
-import NumberRules from "./NumberRules";
-import StringRule from "./StringRule";
+import ValueRules from "./ValueRules";
 
 const Rules = {
     basic: BasicRules,
-    number: NumberRules,
-    string: StringRule,
+    value: ValueRules,
     key: KeyRules,
+    key_value: KeyValueRules,
     not: NotValidationRule
 }
 

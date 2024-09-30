@@ -1,8 +1,8 @@
 import { BaseValidateRule } from "../ValidateRule"
 
 const Max: BaseValidateRule = ({ values, key, ruleKeyParams }) => {
-    const value = values[key];
     if (ruleKeyParams && ruleKeyParams.length === 1 && !isNaN(Number(ruleKeyParams[0]))) {
+        const value = values[key];
         const max = Number(ruleKeyParams[0])
         if (!isNaN(Number(value))) {
             if (Number(value) <= max) {
