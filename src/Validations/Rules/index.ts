@@ -35,13 +35,13 @@ import Between from "./Between";
 import IsBoolean from "./IsBoolean";
 import Contains from "./Contains";
 import UpperCase from "./UpperCase";
-import ContainsUpperCase from "./ContainsUpperCase";
+import MustContainsUpperCase from "./MustContainsUpperCase";
 import SmallCase from "./SmallCase";
-import ContainsSmallCase from "./ContainsSmallCase";
+import MustContainsSmallCase from "./MustContainsSmallCase";
 import Numeric from "./Numeric";
-import ContainsNumeric from "./ContainsNumeric";
+import MustContainsNumeric from "./MustContainsNumeric";
 import Symbols from "./Symbols";
-import ContainsSymbols from "./ContainsSymbols";
+import MustContainsSymbols from "./MustContainsSymbols";
 
 const Rules: Record<Keys, BaseValidateRule> = {
     accepted: Accepted,
@@ -79,13 +79,13 @@ const Rules: Record<Keys, BaseValidateRule> = {
     same: Same,
     regex: Regex,
     upper_case: UpperCase,
-    contains_upper_case: ContainsUpperCase,
+    must_contains_upper_case: MustContainsUpperCase,
     small_case: SmallCase,
-    contains_small_case: ContainsSmallCase,
+    must_contains_small_case: MustContainsSmallCase,
     numeric: Numeric,
-    contains_numeric: ContainsNumeric,
+    must_contains_numeric: MustContainsNumeric,
     symbols: Symbols,
-    contains_symbols: ContainsSymbols
+    must_contains_symbols: MustContainsSymbols
 }
 
 export default Rules

@@ -12,13 +12,13 @@ const BasicRules = [
     'date',
     'email',
     'upper_case',
-    'contains_upper_case',
+    'must_contains_upper_case',
     'small_case',
-    'contains_small_case',
+    'must_contains_small_case',
     'numeric',
-    'contains_numeric',
+    'must_contains_numeric',
     'symbols',
-    'contains_symbols',
+    'must_contains_symbols',
 ] as const;
 
 export default BasicRules

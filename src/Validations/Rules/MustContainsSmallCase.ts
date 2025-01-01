@@ -1,12 +1,12 @@
 import { BaseValidateRule } from "../ValidateRule"
 import ValidateRegex from "./ValidateRegex";
 
-const ContainsSymbols: BaseValidateRule = ({ values, key }) => {
+const MustContainsSmallCase: BaseValidateRule = ({ values, key }) => {
     const value = values[key];
-    if (!ValidateRegex(".*[^A-Za-z0-9].*", value)) {
+    if (!ValidateRegex(".*[a-z].*", value)) {
         return false;
     }
     return true;
 }
 
-export default ContainsSymbols
+export default MustContainsSmallCase

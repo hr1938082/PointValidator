@@ -1,12 +1,12 @@
 import { BaseValidateRule } from "../ValidateRule"
 import ValidateRegex from "./ValidateRegex";
 
-const ContainsSmallCase: BaseValidateRule = ({ values, key }) => {
+const MustContainsUpperCase: BaseValidateRule = ({ values, key }) => {
     const value = values[key];
-    if (!ValidateRegex(".*[a-z].*", value)) {
+    if (!ValidateRegex(".*[A-Z].*", value)) {
         return false;
     }
     return true;
 }
 
-export default ContainsSmallCase
+export default MustContainsUpperCase

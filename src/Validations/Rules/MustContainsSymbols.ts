@@ -1,12 +1,12 @@
 import { BaseValidateRule } from "../ValidateRule"
 import ValidateRegex from "./ValidateRegex";
 
-const ContainsNumeric: BaseValidateRule = ({ values, key }) => {
+const MustContainsSymbols: BaseValidateRule = ({ values, key }) => {
     const value = values[key];
-    if (!ValidateRegex(".*[0-9].*", value)) {
+    if (!ValidateRegex(".*[^A-Za-z0-9].*", value)) {
         return false;
     }
     return true;
 }
 
-export default ContainsNumeric
+export default MustContainsSymbols
